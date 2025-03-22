@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.slider-container {
+    width: 300px;
+    position: relative;
+    margin-top: 20px;
+}
+
+.slider-track {
+    width: 100%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    position: relative;
+}
+
+.slider-thumb {
+    width: 20px;
+    height: 20px;
+    background: #007bff;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.slider-thumb:hover {
+    background: #0056b3;
+}
+
+input {
+    margin-top: 10px;
+    text-align: center;
+    width: 50px;
+    font-size: 16px;
+}

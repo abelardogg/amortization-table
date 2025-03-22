@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizador</title>
+    <link rel="stylesheet" href="/slider.css">
+    <style>
+        #estimator {
+            display: flex;
+            flex-direction: row;
+            gap: 90px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="estimator">
+        <div id="controls">
+
+            <p>Precio inmueble</p>
+            <div id="properyPrice">
+                <input type="number" class="slider-percentage" min="0" max="100" value="0">
+                <input type="number" class="slider-unit-quantity" min="0" max="10000" value="0">
+                <div class="slider-container">
+                    <div class="slider-track"></div>
+                    <div class="slider-thumb"></div>
+                </div>
+            </div>
+
+            <p>Aportacion ahorro</p>
+            <div id="contributedSavings">
+                <input type="number" class="slider-percentage" min="0" max="100" value="0">
+                <input type="number" class="slider-unit-quantity" min="0" max="1000" value="100">
+                <div class="slider-container">
+                    <div class="slider-track"></div>
+                    <div class="slider-thumb"></div>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div>
+                <label for="purchase-expenses">Gastos de compra</label>
+                <input id="purchase-expenses" type="number" name="purchase-expenses" readonly value="2000"><span>€</span>
+
+            </div>
+
+            <br><br>
+            <div>
+                <label for="taxes">Impuestos</label>
+                <input id="taxes" name="taxes" type="text" readonly value="0">
+                <select name="taxes-select" id="taxes-select">
+                    <option value="7">Andalucia</option>
+                    <option value="10">Aragon</option>
+                    <option value="10">Asturias</option>
+                    <option value="13">Baleares</option>
+                    <option value="6.50">Canarias</option>
+                    <option value="9">Cantabria</option>
+                    <option value="9">Castilla-La mancha</option>
+                    <option value="10">Castilla y Leon</option>
+                    <option value="11">Cataluña</option>
+                    <option value="6">Ceuta</option>
+                    <option value="6">Comunidad de Madrid</option>
+                    <option value="11">Comunidad Valenciana</option>
+                    <option value="11">Extremadura</option>
+                    <option value="8">Galicia</option>
+                    <option value="7">La Rioja</option>
+                    <option value="6">Melilla</option>
+                    <option value="8">Murcia</option>
+                    <option value="6">Navarra</option>
+                    <option value="7">Pais Vasco</option>
+                </select>
+            </div>
+
+        </div>
+        <div id="summary">
+            <label for="property-total">Coste total inmueble</label><input type="text" readonly value="0" id="property-total" name="property-total">
+            <br><br>
+            <label for="mortgage-amount">Importe hipoteca</label><input type="text" readonly value="0" id="mortgage-amount" name="mortgage-amount">
+        </div>
+    </div>
+
+    
+
+    <div id="amortization-table">
+
+        <div id="amortization-table-data">
+            <label for="amortization-interests">Intereses</label><input id="amortization-interests" type="number" value="12">
+            <label for="months">Pagos (meses)</label><input id="months" type="number" value="24">
+        </div>
+
+        <div id="amortization-table-head">
+    
+            <div style="display: flex;">
+                <div style="width: 120px;">
+                    <p>num</p>
+                </div>
+                <div style="width: 120px;">
+                    <p>Saldo</p>
+                </div>
+                <div style="width: 120px;">
+                    <p>Pago capital</p>
+                </div>
+                <div style="width: 120px;">
+                    <p>Pago intereses</p>
+                </div>
+                <div style="width: 120px;">
+                    <p>Monto pago</p>
+                </div>
+                <div style="width: 120px;">
+                    <p>Plazo en dias</p>
+                </div>
+                <div style="width: 120px;">
+                    <p>Saldo restante</p>
+                </div>
+            </div>
+        </div>
+        <div id="amortization-table-body">
+            
+        </div>
+
+    </div>
+
+    <script>
+
+const sliderModified = new Event('sliderModified');
+
+
+          window.roundNumber = function(num) {
+        return Math.round(num * 100) / 100;
+    }
+    </script>
+
+    <script src="/slider.js"></script>
+    <script src="/app.js"></script>
+    <script src="/amortization.js"></script>
+
+</body>
+
+</html>
