@@ -22,8 +22,19 @@
 
             <p>Precio inmueble</p>
             <div id="properyPrice">
-                <input type="number" class="slider-percentage" min="0" max="100" value="0">
-                <input type="number" class="slider-unit-quantity" min="0" max="10000" value="0">
+            <div style="display: flex; gap: 40px;">
+                <!-- dont touch this -->
+                <div>
+                    <input type="number" class="slider-percentage" min="0" max="100" value="0"><span>%</span>
+                </div>
+                <!-- set the max quantity you want -->
+                <div>
+                    <span>€</span><input type="number" class="slider-unit-quantity" min="0" max="10000" value="0" style="width:100px">
+                </div>
+            </div>
+
+
+
                 <div class="slider-container">
                     <div class="slider-track"></div>
                     <div class="slider-thumb"></div>
@@ -32,8 +43,15 @@
 
             <p>Aportacion ahorro</p>
             <div id="contributedSavings">
-                <input type="number" class="slider-percentage" min="0" max="100" value="0">
-                <input type="number" class="slider-unit-quantity" min="0" max="1000" value="100">
+                <div style="display: flex; gap: 40px;">
+                    <div>
+                        <input type="number" class="slider-percentage" min="0" max="100" value="0"><span>%</span>
+                    </div>
+                    <div>
+                        <span>€</span><input type="number" class="slider-unit-quantity" min="0" max="1000" value="100">
+                    </div>
+                </div>
+    
                 <div class="slider-container">
                     <div class="slider-track"></div>
                     <div class="slider-thumb"></div>
@@ -49,9 +67,11 @@
             </div>
 
             <br><br>
-            <div>
-                <label for="taxes">Impuestos</label>
-                <input id="taxes" name="taxes" type="text" readonly value="0">
+            <div style="display: flex; gap: 40px;">
+                <div>
+                    <label for="taxes">Impuestos <span>€</span></label>
+                    <input id="taxes" name="taxes" type="text" readonly value="0" style="margin: 0;">
+                </div>
                 <select name="taxes-select" id="taxes-select">
                     <option value="7">Andalucia (7%)</option>
                     <option value="10">Aragon (10%)</option>
@@ -87,9 +107,14 @@
 
     <div id="amortization-table">
 
-        <div id="amortization-table-data">
-            <label for="amortization-interests">Intereses</label><input id="amortization-interests" type="number" value="12">
-            <label for="months">Pagos (meses)</label><input id="months" type="number" value="24">
+        <div id="amortization-table-data" style="display: flex; gap: 40px;">
+            <div>
+                <label for="amortization-interests">Intereses</label><input id="amortization-interests" type="number" value="12"><span>%</span>
+            </div>
+            <div>
+                <label for="months">Pagos (meses)</label><input id="months" type="number" value="24">
+
+            </div>
         </div>
 
         <div id="amortization-table-head">
