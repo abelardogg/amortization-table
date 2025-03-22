@@ -21,6 +21,11 @@
 
     });
 
+    $taxesSelect.addEventListener('change', function(e){
+        document.dispatchEvent(window.sliderModified);
+
+    });
+
 
 
 

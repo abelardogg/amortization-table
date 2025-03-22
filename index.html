@@ -53,25 +53,25 @@
                 <label for="taxes">Impuestos</label>
                 <input id="taxes" name="taxes" type="text" readonly value="0">
                 <select name="taxes-select" id="taxes-select">
-                    <option value="7">Andalucia</option>
-                    <option value="10">Aragon</option>
-                    <option value="10">Asturias</option>
-                    <option value="13">Baleares</option>
-                    <option value="6.50">Canarias</option>
-                    <option value="9">Cantabria</option>
-                    <option value="9">Castilla-La mancha</option>
-                    <option value="10">Castilla y Leon</option>
-                    <option value="11">Cataluña</option>
-                    <option value="6">Ceuta</option>
-                    <option value="6">Comunidad de Madrid</option>
-                    <option value="11">Comunidad Valenciana</option>
-                    <option value="11">Extremadura</option>
-                    <option value="8">Galicia</option>
-                    <option value="7">La Rioja</option>
-                    <option value="6">Melilla</option>
-                    <option value="8">Murcia</option>
-                    <option value="6">Navarra</option>
-                    <option value="7">Pais Vasco</option>
+                    <option value="7">Andalucia (7%)</option>
+                    <option value="10">Aragon (10%)</option>
+                    <option value="10">Asturias (10%)</option>
+                    <option value="13">Baleares (13%)</option>
+                    <option value="6.50">Canarias (6.50%)</option>
+                    <option value="9">Cantabria (9%)</option>
+                    <option value="9">Castilla-La Mancha (9%)</option>
+                    <option value="10">Castilla y Leon (10%)</option>
+                    <option value="11">Cataluña (11%)</option>
+                    <option value="6">Ceuta (6%)</option>
+                    <option value="6">Comunidad de Madrid (6%)</option>
+                    <option value="11">Comunidad Valenciana (11%)</option>
+                    <option value="11">Extremadura (11%)</option>
+                    <option value="8">Galicia (8%)</option>
+                    <option value="7">La Rioja (7%)</option>
+                    <option value="6">Melilla (6%)</option>
+                    <option value="8">Murcia (8%)</option>
+                    <option value="6">Navarra (6%)</option>
+                    <option value="7">Pais Vasco (7%)</option>
                 </select>
             </div>
 
@@ -126,7 +126,7 @@
 
     <script>
 
-const sliderModified = new Event('sliderModified');
+window.sliderModified = new Event('sliderModified');
 
 
           window.roundNumber = function(num) {

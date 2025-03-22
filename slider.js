@@ -31,7 +31,7 @@ const Slider = function () {
                     inputUnitQuantity.value = unitQuantityValue;
                     self.setUnitQuantityValue(unitQuantityValue);
                 }
-                document.dispatchEvent(sliderModified);
+                document.dispatchEvent(window.sliderModified);
 
             }
 
