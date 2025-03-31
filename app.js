@@ -4,6 +4,8 @@
     const $taxesInput = document.getElementById('taxes');
     const $taxesSelect = document.getElementById('taxes-select');
     const $mortgageAmount = document.getElementById('mortgage-amount');
+    const $amortizationInterestsInput = document.getElementById('amortization-interests');
+    const $monthsInput = document.getElementById('months');
 
 
     function getTaxesValue(){
@@ -22,6 +24,15 @@
     });
 
     $taxesSelect.addEventListener('change', function(e){
+        document.dispatchEvent(window.sliderModified);
+
+    });
+
+    $amortizationInterestsInput.addEventListener('input', function(e){
+        document.dispatchEvent(window.sliderModified);
+
+    });
+    $monthsInput.addEventListener('input', function(e){
         document.dispatchEvent(window.sliderModified);
 
     });
