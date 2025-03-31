@@ -11,33 +11,64 @@
             display: flex;
             flex-direction: row;
             gap: 90px;
+            justify-content: space-between;
+            margin-bottom: 70px;
         }
+        .container{
+            width: 100%;
+            max-width: 1200px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+
+        input {
+            /* margin-top: 10px; */
+            /* text-align: center; */
+            /* width: 50px; */
+            font-size: 16px;
+            border: 0;
+            outline: 0;
+        }
+
+        input:read-only{
+            background-color: transparent;
+           
+        }
+
     </style>
 </head>
 
 <body>
+
+    <div class="container">
+
 
     <div id="estimator">
         <div id="controls">
 
             <p>Precio inmueble</p>
             <div id="properyPrice">
-            <div style="display: flex; gap: 40px;">
-                <!-- dont touch this -->
-                <div>
-                    <input type="number" class="slider-percentage" min="0" max="100" value="0"><span>%</span>
-                </div>
-                <!-- set the max quantity you want -->
-                <div>
-                    <span>€</span><input type="number" class="slider-unit-quantity" min="0" max="10000" value="0" style="width:100px">
-                </div>
-            </div>
+                <div style="display: flex; gap: 40px;">
+                    <!-- dont touch this -->
+                    <div>
+                        <input type="number" class="slider-percentage" min="0" max="100" value="0"><span>%</span>
+                    </div>
+                    <!-- set the max quantity you want -->
+                    <div>
+                        <span>€</span>
+                        <input type="number" class="slider-unit-quantity" min="0" max="10000" value="0" style="width:100px">
+                    </div>
 
-
+                </div>
 
                 <div class="slider-container">
                     <div class="slider-track"></div>
                     <div class="slider-thumb"></div>
+                </div>
+                <div>
+                    <p style="color: #afafaf;">(max = 10000)</p>
                 </div>
             </div>
 
@@ -56,13 +87,20 @@
                     <div class="slider-track"></div>
                     <div class="slider-thumb"></div>
                 </div>
+
+                <div>
+                    <p style="color: #afafaf;">(max = 1000)</p>
+                </div>
             </div>
 
             <br><br>
 
-            <div>
+            <div style="display: flex ; align-items: center;  gap: 20px;">
                 <label for="purchase-expenses">Gastos de compra</label>
-                <input id="purchase-expenses" type="number" name="purchase-expenses" readonly value="2000"><span>€</span>
+                <div>
+                    <span>€</span>
+                    <input id="purchase-expenses" type="number" name="purchase-expenses" readonly value="2000">
+                </div>
 
             </div>
 
@@ -97,9 +135,19 @@
 
         </div>
         <div id="summary">
-            <label for="property-total">Coste total inmueble</label><input type="text" readonly value="0" id="property-total" name="property-total">
-            <br><br>
-            <label for="mortgage-amount">Importe hipoteca</label><input type="text" readonly value="0" id="mortgage-amount" name="mortgage-amount">
+            <div style="display: flex ; align-items: center; justify-content: space-between; gap: 20px;">
+                <label for="property-total">Coste total inmueble</label>
+                <input type="text" readonly value="0" id="property-total" name="property-total">
+            </div>
+
+            
+            <br>
+            <br>
+            
+            <div style="display: flex ; align-items: center; justify-content: space-between; gap: 20px;">
+                <label for="mortgage-amount">Importe hipoteca</label>
+                <input type="text" readonly value="0" id="mortgage-amount" name="mortgage-amount">
+            </div>
         </div>
     </div>
 
@@ -148,6 +196,7 @@
         </div>
 
     </div>
+</div>
 
     <script>
 
