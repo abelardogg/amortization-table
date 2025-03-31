@@ -34,7 +34,7 @@
 
         input:read-only{
             background-color: transparent;
-           
+           font-weight: bold;
         }
 
     </style>
@@ -57,8 +57,9 @@
                     </div>
                     <!-- set the max quantity you want -->
                     <div>
+                        <input type="number" class="slider-unit-quantity" min="0" max="10000" value="0" style="width:100px; text-align: right;">
                         <span>€</span>
-                        <input type="number" class="slider-unit-quantity" min="0" max="10000" value="0" style="width:100px">
+
                     </div>
 
                 </div>
@@ -79,7 +80,8 @@
                         <input type="number" class="slider-percentage" min="0" max="100" value="0"><span>%</span>
                     </div>
                     <div>
-                        <span>€</span><input type="number" class="slider-unit-quantity" min="0" max="1000" value="100">
+                        <input type="number" class="slider-unit-quantity" min="0" max="1000" value="100" style="text-align: right;">
+                        <span>€</span>
                     </div>
                 </div>
     
@@ -98,17 +100,18 @@
             <div style="display: flex ; align-items: center;  gap: 20px;">
                 <label for="purchase-expenses">Gastos de compra</label>
                 <div>
+                    <input id="purchase-expenses" type="text" name="purchase-expenses" readonly value="2000" style="text-align: right; width: 45px;">
                     <span>€</span>
-                    <input id="purchase-expenses" type="number" name="purchase-expenses" readonly value="2000">
                 </div>
 
             </div>
 
             <br><br>
             <div style="display: flex; gap: 40px;">
+                <label for="taxes">Impuestos </label>
                 <div>
-                    <label for="taxes">Impuestos <span>€</span></label>
-                    <input id="taxes" name="taxes" type="text" readonly value="0" style="margin: 0;">
+                    <input id="taxes" name="taxes" type="text" readonly value="0" style="margin: 0; width: 50px; text-align: right;">
+                    <span>€</span>
                 </div>
                 <select name="taxes-select" id="taxes-select">
                     <option value="7">Andalucia (7%)</option>
@@ -135,18 +138,24 @@
 
         </div>
         <div id="summary">
-            <div style="display: flex ; align-items: center; justify-content: space-between; gap: 20px;">
+            <div style="display: flex ; align-items: center;  gap: 20px;">
                 <label for="property-total">Coste total inmueble</label>
-                <input type="text" readonly value="0" id="property-total" name="property-total">
+                <div>
+                    <input type="text" readonly value="0" id="property-total" name="property-total" style="text-align: right; width: 100px;">
+                    <span>€</span>
+                </div>
             </div>
 
             
             <br>
             <br>
             
-            <div style="display: flex ; align-items: center; justify-content: space-between; gap: 20px;">
+            <div style="display: flex ; align-items: center;  gap: 20px;">
                 <label for="mortgage-amount">Importe hipoteca</label>
-                <input type="text" readonly value="0" id="mortgage-amount" name="mortgage-amount">
+                <div>
+                    <input type="text" readonly value="0" id="mortgage-amount" name="mortgage-amount" style="text-align: right; width: 100px;">
+                    <span>€</span>
+                </div>
             </div>
         </div>
     </div>
