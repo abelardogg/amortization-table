@@ -8,19 +8,22 @@
     const $monthsInput = document.getElementById('months');
 
 
-    function getTaxesValue(){
-        const taxPercentage = Number($taxesSelect.value);
-        const taxValue = window.roundNumber(Number(taxPercentage) / 100) * ProperyPriceSlider.getUnitQuantityValue();
-        return window.roundNumber(taxValue);
+    function getTaxesValue() {
+        const taxPercentage = new Big($taxesSelect.value || 0); // Evita NaN si el valor está vacío
+        const taxValue = taxPercentage.div(100).times(ProperyPriceSlider.getUnitQuantityValue());
+        return taxValue.toFixed(2); // Redondeo adecuado
     }
-
+    
     document.addEventListener('sliderModified', (e) => {
-        const taxesValue = getTaxesValue();
-        $taxesInput.value = taxesValue
-        
-        $propertyTotal.value = ProperyPriceSlider.getUnitQuantityValue() + purchaseExpensesValue + taxesValue;
-        $mortgageAmount.value = $propertyTotal.value - ContributedSavings.getUnitQuantityValue();
-
+        const taxesValue = new Big(getTaxesValue());
+        $taxesInput.value = taxesValue.toFixed(2);
+    
+        const propertyPrice = new Big(ProperyPriceSlider.getUnitQuantityValue());
+        const totalPropertyValue = propertyPrice.plus(purchaseExpensesValue).plus(taxesValue);
+        $propertyTotal.value = totalPropertyValue.toFixed(2);
+    
+        const mortgageAmount = totalPropertyValue.minus(ContributedSavings.getUnitQuantityValue());
+        $mortgageAmount.value = mortgageAmount.toFixed(2);
     });
 
     $taxesSelect.addEventListener('change', function(e){
@@ -36,9 +39,5 @@
         document.dispatchEvent(window.sliderModified);
 
     });
-
-
-
-
 
 })();

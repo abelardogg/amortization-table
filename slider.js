@@ -26,9 +26,9 @@ const Slider = function () {
                 thumb.style.left = position + 'px';
                 inputPercentage.value = percent;
                 self.setPercentageValue(percent);
-                if(!!inputUnitQuantity){
-                    const unitQuantityValue = inputUnitQuantityMax * (percent / 100);
-                    inputUnitQuantity.value = unitQuantityValue;
+                if (inputUnitQuantity) {
+                    const unitQuantityValue = new Big(inputUnitQuantityMax).times(new Big(percent).div(100));
+                    inputUnitQuantity.value = unitQuantityValue.toFixed(2);
                     self.setUnitQuantityValue(unitQuantityValue);
                 }
                 document.dispatchEvent(window.sliderModified);
