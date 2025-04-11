@@ -5,218 +5,218 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cotizador</title>
+    <link rel="stylesheet" href="/reset.css">
     <link rel="stylesheet" href="/slider.css">
-    <style>
-        #estimator {
-            display: flex;
-            flex-direction: row;
-            gap: 90px;
-            justify-content: space-between;
-            margin-bottom: 70px;
-        }
-        .container{
-            width: 100%;
-            max-width: 1200px;
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            margin: 0 auto;
-        }
+    <link rel="stylesheet" href="/styles.css">
 
-        input {
-            /* margin-top: 10px; */
-            /* text-align: center; */
-            /* width: 50px; */
-            font-size: 16px;
-            border: 0;
-            outline: 0;
-        }
-
-        input:read-only{
-            background-color: transparent;
-           font-weight: bold;
-        }
-
-    </style>
 </head>
 
 <body>
 
     <div class="container">
+        <h1 style="font-size: 32px; margin-bottom: 55px;">Simulador hipoteca</h1>
 
 
-    <div id="estimator">
-        <div id="controls">
+        <div id="estimator">
 
-            <p>Precio inmueble</p>
-            <div id="properyPrice">
-                <div style="display: flex; gap: 40px;">
-                    <!-- dont touch this -->
-                    <div>
-                        <input type="number" class="slider-percentage" min="0" max="100" value="0"><span>%</span>
+            <div id="main-section">
+                <div id="controls">
+                    <div id="properyPrice-container" class="prop-container">
+                        <p class="prop-title">Precio inmueble</p>
+                        <div id="properyPrice">
+                            <div style="display: flex; gap: 40px;">
+                                <!-- dont touch this -->
+                                <div style="display: none;">
+                                    <input type="number" class="slider-percentage" min="0" max="100"
+                                        value="0"><span>%</span>
+                                </div>
+                                <!-- set the max quantity you want -->
+                                <div class="slider-input-container">
+                                    <input type="number" class="slider-unit-quantity" min="0" max="1000000" value="0"
+                                        style="text-align: right;">
+                                    <span>€</span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="slider-container">
+                                <div class="slider-track"></div>
+                                <div class="slider-thumb"></div>
+                            </div>
+                            <div>
+                                <p style="color: #afafaf; display: none;">(max = 1000000)</p>
+                            </div>
+                        </div>
                     </div>
-                    <!-- set the max quantity you want -->
-                    <div>
-                        <input type="number" class="slider-unit-quantity" min="0" max="10000" value="0" style="width:100px; text-align: right;">
-                        <span>€</span>
 
+
+
+                    <div class="prop-container">
+                        <p class="prop-title">Aportacion ahorro</p>
+                        <div id="contributedSavings">
+                            <div style="display: flex; gap: 40px;">
+                                <div style="display: none;">
+                                    <input type="number" class="slider-percentage" min="0" max="100"
+                                        value="0"><span>%</span>
+                                </div>
+                                <div class="slider-input-container">
+                                    <input type="number" class="slider-unit-quantity" min="0" max="1000000" value="100"
+                                        style="text-align: right;">
+                                    <span>€</span>
+                                </div>
+                            </div>
+
+                            <div class="slider-container">
+                                <div class="slider-track"></div>
+                                <div class="slider-thumb"></div>
+                            </div>
+
+                            <div>
+                                <p style="color: #afafaf; display: none;">(max = 1000000)</p>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
 
-                <div class="slider-container">
-                    <div class="slider-track"></div>
-                    <div class="slider-thumb"></div>
+                <div id="taxes-expenses">
+                    <div id="expenses-container" style="">
+                        <label for="purchase-expenses" class="prop-title">Gastos de compra</label>
+                        <div style="width: 100%; display: flex ; justify-content: flex-end; align-items: center;">
+                            <input id="purchase-expenses" type="text" name="purchase-expenses" readonly value="2000">
+                            <span>€</span>
+                        </div>
+
+                    </div>
+
+                    <div id="taxes-container">
+                        <div id="taxes-container-display">
+                            <label for="taxes" class="prop-title">Impuestos </label>
+                            <div style="width: 100%; display: flex ; justify-content: flex-end; align-items: center;">
+                                <input id="taxes" name="taxes" type="text" readonly value="0">
+                                <span>€</span>
+                            </div>
+                        </div>
+                        <div id="province-select-container">
+                            <select name="taxes-select" id="taxes-select">
+                                <option value="7">Andalucia (7%)</option>
+                                <option value="10">Aragon (10%)</option>
+                                <option value="10">Asturias (10%)</option>
+                                <option value="13">Baleares (13%)</option>
+                                <option value="6.50">Canarias (6.50%)</option>
+                                <option value="9">Cantabria (9%)</option>
+                                <option value="9">Castilla-La Mancha (9%)</option>
+                                <option value="10">Castilla y Leon (10%)</option>
+                                <option value="11">Cataluña (11%)</option>
+                                <option value="6">Ceuta (6%)</option>
+                                <option value="6">Comunidad de Madrid (6%)</option>
+                                <option value="11">Comunidad Valenciana (11%)</option>
+                                <option value="11">Extremadura (11%)</option>
+                                <option value="8">Galicia (8%)</option>
+                                <option value="7">La Rioja (7%)</option>
+                                <option value="6">Melilla (6%)</option>
+                                <option value="8">Murcia (8%)</option>
+                                <option value="6">Navarra (6%)</option>
+                                <option value="7">Pais Vasco (7%)</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+
+                    <div id="summary">
+                        <div style="display: flex ; align-items: center;  gap: 20px;">
+                            <label for="property-total">Coste total inmueble</label>
+                            <div style="display: flex ; align-items: center;">
+                                <input type="text" readonly value="0" id="property-total" name="property-total"
+                                    style="text-align: right;">
+                                <span>€</span>
+                            </div>
+                        </div>
+        
+        
+                        
+        
+                        <div style="display: flex ; align-items: center;  gap: 20px;">
+                            <label for="mortgage-amount">Importe hipoteca</label>
+                            <div style="display: flex ; align-items: center;">
+                                <input type="text" readonly value="0" id="mortgage-amount" name="mortgage-amount"
+                                    style="text-align: right;">
+                                <span>€</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
                 </div>
-                <div>
-                    <p style="color: #afafaf;">(max = 10000)</p>
-                </div>
+
             </div>
 
-            <p>Aportacion ahorro</p>
-            <div id="contributedSavings">
-                <div style="display: flex; gap: 40px;">
-                    <div>
-                        <input type="number" class="slider-percentage" min="0" max="100" value="0"><span>%</span>
-                    </div>
-                    <div>
-                        <input type="number" class="slider-unit-quantity" min="0" max="1000" value="100" style="text-align: right;">
-                        <span>€</span>
-                    </div>
-                </div>
-    
-                <div class="slider-container">
-                    <div class="slider-track"></div>
-                    <div class="slider-thumb"></div>
-                </div>
 
-                <div>
-                    <p style="color: #afafaf;">(max = 1000)</p>
-                </div>
-            </div>
-
-            <br><br>
-
-            <div style="display: flex ; align-items: center;  gap: 20px;">
-                <label for="purchase-expenses">Gastos de compra</label>
-                <div>
-                    <input id="purchase-expenses" type="text" name="purchase-expenses" readonly value="2000" style="text-align: right; width: 45px;">
-                    <span>€</span>
-                </div>
-
-            </div>
-
-            <br><br>
-            <div style="display: flex; gap: 40px;">
-                <label for="taxes">Impuestos </label>
-                <div>
-                    <input id="taxes" name="taxes" type="text" readonly value="0" style="margin: 0; width: 50px; text-align: right;">
-                    <span>€</span>
-                </div>
-                <select name="taxes-select" id="taxes-select">
-                    <option value="7">Andalucia (7%)</option>
-                    <option value="10">Aragon (10%)</option>
-                    <option value="10">Asturias (10%)</option>
-                    <option value="13">Baleares (13%)</option>
-                    <option value="6.50">Canarias (6.50%)</option>
-                    <option value="9">Cantabria (9%)</option>
-                    <option value="9">Castilla-La Mancha (9%)</option>
-                    <option value="10">Castilla y Leon (10%)</option>
-                    <option value="11">Cataluña (11%)</option>
-                    <option value="6">Ceuta (6%)</option>
-                    <option value="6">Comunidad de Madrid (6%)</option>
-                    <option value="11">Comunidad Valenciana (11%)</option>
-                    <option value="11">Extremadura (11%)</option>
-                    <option value="8">Galicia (8%)</option>
-                    <option value="7">La Rioja (7%)</option>
-                    <option value="6">Melilla (6%)</option>
-                    <option value="8">Murcia (8%)</option>
-                    <option value="6">Navarra (6%)</option>
-                    <option value="7">Pais Vasco (7%)</option>
-                </select>
-            </div>
-
+            
         </div>
-        <div id="summary">
-            <div style="display: flex ; align-items: center;  gap: 20px;">
-                <label for="property-total">Coste total inmueble</label>
+
+
+
+        <div id="amortization-table">
+            <h1 style="font-size: 32px; margin-bottom: 55px;">Tabla de Amortizacion</h1>
+
+
+            <div id="amortization-table-data">
                 <div>
-                    <input type="text" readonly value="0" id="property-total" name="property-total" style="text-align: right; width: 100px;">
-                    <span>€</span>
+                    <label for="amortization-interests">Intereses</label><input id="amortization-interests"
+                        type="number" value="12"><span>%</span>
+                </div>
+                <div>
+                    <label for="months">Pagos (meses)</label><input id="months" type="number" value="24">
+
                 </div>
             </div>
 
-            
-            <br>
-            <br>
-            
-            <div style="display: flex ; align-items: center;  gap: 20px;">
-                <label for="mortgage-amount">Importe hipoteca</label>
-                <div>
-                    <input type="text" readonly value="0" id="mortgage-amount" name="mortgage-amount" style="text-align: right; width: 100px;">
-                    <span>€</span>
-                </div>
+            <div id="amortization-table-head">
+
+                    <div class="table-header payment-number-col" >
+                        <p>#</p>
+                    </div>
+                    <div class="table-header"  >
+                        <p>saldo</p>
+                    </div>
+                    <div class="table-header"  >
+                        <p>pago capital</p>
+                    </div>
+                    <div class="table-header"  >
+                        <p>pago intereses</p>
+                    </div>
+                    <div class="table-header"  >
+                        <p>monto pago</p>
+                    </div>
+                    <div class="table-header"  >
+                        <p>plazo en dias</p>
+                    </div>
+                    <div class="table-header"  >
+                        <p>nuevo saldo</p>
+                    </div>
             </div>
+            <div id="amortization-table-body">
+
+            </div>
+
         </div>
     </div>
-
-    
-
-    <div id="amortization-table">
-
-        <div id="amortization-table-data" style="display: flex; gap: 40px;">
-            <div>
-                <label for="amortization-interests">Intereses</label><input id="amortization-interests" type="number" value="12"><span>%</span>
-            </div>
-            <div>
-                <label for="months">Pagos (meses)</label><input id="months" type="number" value="24">
-
-            </div>
-        </div>
-
-        <div id="amortization-table-head">
-    
-            <div style="display: flex;">
-                <div style="width: 120px;">
-                    <p>num</p>
-                </div>
-                <div style="width: 120px;">
-                    <p>Saldo</p>
-                </div>
-                <div style="width: 120px;">
-                    <p>Pago capital</p>
-                </div>
-                <div style="width: 120px;">
-                    <p>Pago intereses</p>
-                </div>
-                <div style="width: 120px;">
-                    <p>Monto pago</p>
-                </div>
-                <div style="width: 120px;">
-                    <p>Plazo en dias</p>
-                </div>
-                <div style="width: 120px;">
-                    <p>Saldo restante</p>
-                </div>
-            </div>
-        </div>
-        <div id="amortization-table-body">
-            
-        </div>
-
-    </div>
-</div>
 
     <script>
 
-window.sliderModified = new Event('sliderModified');
+        window.sliderModified = new Event('sliderModified');
 
 
-          window.roundNumber = function(num) {
-        return Math.round(num * 100) / 100;
-    }
+        window.roundNumber = function (num) {
+            return Math.round(num * 100) / 100;
+        }
     </script>
-<script src='https://cdn.jsdelivr.net/npm/big.js@6.2.2/big.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/big.js@6.2.2/big.min.js'></script>
     <script src="/slider.js"></script>
     <script src="/app.js"></script>
     <script src="/amortization.js"></script>

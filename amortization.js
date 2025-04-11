@@ -34,26 +34,26 @@ function calculateItemizedFees(P, anualRate, n) {
 
 function createRow({ index, balance, capitalPayment, interests, paymentAmount, days, remaningBalance }) {
     return `
-    <div style="display: flex;">
-        <div style="width: 120px;">
+    <div class="table-row">
+        <div class="table-data payment-number-col">
             <p>${index}</p>
         </div>
-        <div style="width: 120px;">
+        <div class="table-data">
             <p>${balance}</p>
         </div>
-        <div style="width: 120px;">
+        <div class="table-data">
             <p>${capitalPayment}</p>
         </div>
-        <div style="width: 120px;">
+        <div class="table-data">
             <p>${interests}</p>
         </div>
-        <div style="width: 120px;">
+        <div class="table-data">
             <p>${paymentAmount}</p>
         </div>
-        <div style="width: 120px;">
+        <div class="table-data">
             <p>${days}</p>
         </div>
-        <div style="width: 120px;">
+        <div class="table-data">
             <p>${remaningBalance}</p>
         </div>
     </div>

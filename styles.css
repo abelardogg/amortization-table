@@ -1,0 +1,106 @@
+#estimator {
+    display: flex;
+    flex-direction: column;
+    /* gap: 90px; */
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+.container{
+    width: 100%;
+    max-width: 1200px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+input {
+    /* margin-top: 10px; */
+    /* text-align: center; */
+    /* width: 50px; */
+    font-size: 16px;
+    border: 0;
+    outline: 0;
+}
+
+
+
+.prop-container{
+    margin-bottom: 55px;
+}
+
+.prop-title{
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+input{
+    text-align: right;
+    background: transparent;
+    border-bottom: 3px solid #007bff;
+}
+input:read-only{
+   font-weight: bold;
+   border-bottom: 0;
+}
+#main-section{
+    display: flex;
+    /* border-bottom: 5px dotted #007bff; */
+}
+
+#controls{
+    width: 62%;
+    flex-shrink: 0;
+    padding-right: 15px;
+}
+
+.slider-container{width: 100%; }
+#taxes-expenses{
+    padding: 0 15px;
+    display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        /* border-left: 5px dotted #007bff; */
+
+}
+
+#taxes-expenses .prop-title{width: 60%; flex-shrink: 0; margin: 0;}
+
+#expenses-container{display: flex ; align-items: center;  gap: 8px; flex-wrap: nowrap;}
+#expenses-container input{text-align: right; width: 45px;}
+#taxes-container{display: flex; flex-wrap: wrap;}
+#taxes-container-display{width: 100%; display: flex;}
+#taxes-container-display input{margin: 0; width: 100%; text-align: right;}
+#province-select-container{display: flex; width: 100%;
+    justify-content: end;}
+
+#taxes-select{text-align: right;
+    text-align: right;
+    font-size: 17px;
+    border-radius: 5px;
+    height: 35px;
+    border: 0;
+    background-color: #007bff;
+    color: white;
+}
+
+#properyPrice, #contributedSavings{display: flex; gap: 8px;}
+.slider-input-container{display: flex; align-items: center;}
+.slider-input-container input{width: 120px;}
+#summary{display: flex; flex-direction: column; font-size: 20px; margin-top: 20px; padding: 8px; background-color: #44CF6C; border-radius: 5px; gap: 12px;}
+#summary input{ font-size: 24px; width: 170px;}
+#summary label{width: 50%;}
+
+#amortization-table-head{display: flex; padding:12px 0;}
+#amortization-table-data{margin-bottom: 25px; display: flex; gap: 40px;} 
+#amortization-table-data label{font-size: 20px;}
+#amortization-table-head{background-color: #007bff;}
+.table-header{font-weight: bold; text-transform: capitalize;     width: calc(100% / 7); padding: 0 12px; text-align: center;}
+.table-data{width: calc(100% / 7); padding: 0 12px; text-align: center;}
+.table-row{display: flex; padding: 10px 0; font-size: 18px;}
+.table-row:nth-child(even){background-color: #b1d7ff;}
+
+.payment-number-col{width: 70px;}
+
+
